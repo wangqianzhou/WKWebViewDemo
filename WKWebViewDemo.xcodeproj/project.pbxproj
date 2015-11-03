@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9335374E1BE7C7AA00F8219D /* PacketTunnelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9335374D1BE7C7AA00F8219D /* PacketTunnelProvider.m */; };
 		933537521BE7C7AA00F8219D /* TDataProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 933537481BE7C7AA00F8219D /* TDataProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		933537611BE7C7E500F8219D /* FilterControlProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 933537601BE7C7E500F8219D /* FilterControlProvider.m */; };
 		933537651BE7C7E500F8219D /* FDataProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9335375B1BE7C7E500F8219D /* FDataProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		93CCABF01A4D80380061475B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABEF1A4D80380061475B /* main.m */; };
 		93CCABF31A4D80380061475B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABF21A4D80380061475B /* AppDelegate.m */; };
@@ -75,15 +73,7 @@
 
 /* Begin PBXFileReference section */
 		933537481BE7C7AA00F8219D /* TDataProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TDataProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9335374B1BE7C7AA00F8219D /* TDataProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TDataProvider.entitlements; sourceTree = "<group>"; };
-		9335374C1BE7C7AA00F8219D /* PacketTunnelProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PacketTunnelProvider.h; sourceTree = "<group>"; };
-		9335374D1BE7C7AA00F8219D /* PacketTunnelProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PacketTunnelProvider.m; sourceTree = "<group>"; };
-		9335374F1BE7C7AA00F8219D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9335375B1BE7C7E500F8219D /* FDataProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FDataProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9335375E1BE7C7E500F8219D /* FDataProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FDataProvider.entitlements; sourceTree = "<group>"; };
-		9335375F1BE7C7E500F8219D /* FilterControlProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterControlProvider.h; sourceTree = "<group>"; };
-		933537601BE7C7E500F8219D /* FilterControlProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterControlProvider.m; sourceTree = "<group>"; };
-		933537621BE7C7E500F8219D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93CCABEA1A4D80380061475B /* WKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CCABEE1A4D80380061475B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93CCABEF1A4D80380061475B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -147,51 +137,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		933537491BE7C7AA00F8219D /* TDataProvider */ = {
-			isa = PBXGroup;
-			children = (
-				9335374C1BE7C7AA00F8219D /* PacketTunnelProvider.h */,
-				9335374D1BE7C7AA00F8219D /* PacketTunnelProvider.m */,
-				9335374F1BE7C7AA00F8219D /* Info.plist */,
-				9335374A1BE7C7AA00F8219D /* Supporting Files */,
-			);
-			path = TDataProvider;
-			sourceTree = "<group>";
-		};
-		9335374A1BE7C7AA00F8219D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9335374B1BE7C7AA00F8219D /* TDataProvider.entitlements */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9335375C1BE7C7E500F8219D /* FDataProvider */ = {
-			isa = PBXGroup;
-			children = (
-				9335375F1BE7C7E500F8219D /* FilterControlProvider.h */,
-				933537601BE7C7E500F8219D /* FilterControlProvider.m */,
-				933537621BE7C7E500F8219D /* Info.plist */,
-				9335375D1BE7C7E500F8219D /* Supporting Files */,
-			);
-			path = FDataProvider;
-			sourceTree = "<group>";
-		};
-		9335375D1BE7C7E500F8219D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9335375E1BE7C7E500F8219D /* FDataProvider.entitlements */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		93CCABE11A4D80380061475B = {
 			isa = PBXGroup;
 			children = (
 				93CCABEC1A4D80380061475B /* WKWebViewDemo */,
 				93CCAC061A4D80380061475B /* WKWebViewDemoTests */,
-				933537491BE7C7AA00F8219D /* TDataProvider */,
-				9335375C1BE7C7E500F8219D /* FDataProvider */,
 				93CCABEB1A4D80380061475B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -451,7 +401,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9335374E1BE7C7AA00F8219D /* PacketTunnelProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				933537611BE7C7E500F8219D /* FilterControlProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +658,7 @@
 				933537541BE7C7AA00F8219D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		933537661BE7C7E500F8219D /* Build configuration list for PBXNativeTarget "FDataProvider" */ = {
 			isa = XCConfigurationList;
@@ -718,6 +667,7 @@
 				933537681BE7C7E500F8219D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93CCABE51A4D80380061475B /* Build configuration list for PBXProject "WKWebViewDemo" */ = {
 			isa = XCConfigurationList;
