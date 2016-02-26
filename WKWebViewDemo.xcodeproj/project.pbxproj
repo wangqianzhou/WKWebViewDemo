@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		933537521BE7C7AA00F8219D /* TDataProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 933537481BE7C7AA00F8219D /* TDataProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		933537651BE7C7E500F8219D /* FDataProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9335375B1BE7C7E500F8219D /* FDataProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		93CCABF01A4D80380061475B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABEF1A4D80380061475B /* main.m */; };
 		93CCABF31A4D80380061475B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABF21A4D80380061475B /* AppDelegate.m */; };
 		93CCABF61A4D80380061475B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABF51A4D80380061475B /* ViewController.m */; };
 		93CCABFB1A4D80380061475B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93CCABFA1A4D80380061475B /* Images.xcassets */; };
-		93CCAC0A1A4D80380061475B /* WKWebViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCAC091A4D80380061475B /* WKWebViewDemoTests.m */; };
 		93CCAC181A4D80D40061475B /* QuadCurveMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCAC151A4D80D40061475B /* QuadCurveMenu.m */; };
 		93CCAC191A4D80D40061475B /* QuadCurveMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCAC171A4D80D40061475B /* QuadCurveMenuItem.m */; };
 		93CCAC291A4D83E20061475B /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 93CCAC1B1A4D83E20061475B /* bg-addbutton-highlighted.png */; };
@@ -32,30 +29,6 @@
 		93CCAC361A4D83E20061475B /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93CCAC281A4D83E20061475B /* icon-star@2x.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		933537501BE7C7AA00F8219D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93CCABE21A4D80380061475B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 933537471BE7C7AA00F8219D;
-			remoteInfo = TDataProvider;
-		};
-		933537631BE7C7E500F8219D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93CCABE21A4D80380061475B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9335375A1BE7C7E500F8219D;
-			remoteInfo = FDataProvider;
-		};
-		93CCAC041A4D80380061475B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93CCABE21A4D80380061475B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 93CCABE91A4D80380061475B;
-			remoteInfo = WKWebViewDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		933537561BE7C7AA00F8219D /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -63,8 +36,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				933537651BE7C7E500F8219D /* FDataProvider.appex in Embed App Extensions */,
-				933537521BE7C7AA00F8219D /* TDataProvider.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,8 +43,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		933537481BE7C7AA00F8219D /* TDataProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TDataProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9335375B1BE7C7E500F8219D /* FDataProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FDataProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CCABEA1A4D80380061475B /* WKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CCABEE1A4D80380061475B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93CCABEF1A4D80380061475B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,9 +51,6 @@
 		93CCABF41A4D80380061475B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		93CCABF51A4D80380061475B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		93CCABFA1A4D80380061475B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		93CCAC031A4D80380061475B /* WKWebViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKWebViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		93CCAC081A4D80380061475B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93CCAC091A4D80380061475B /* WKWebViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewDemoTests.m; sourceTree = "<group>"; };
 		93CCAC141A4D80D40061475B /* QuadCurveMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenu.h; sourceTree = "<group>"; };
 		93CCAC151A4D80D40061475B /* QuadCurveMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenu.m; sourceTree = "<group>"; };
 		93CCAC161A4D80D40061475B /* QuadCurveMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenuItem.h; sourceTree = "<group>"; };
@@ -106,28 +72,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		933537451BE7C7AA00F8219D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		933537581BE7C7E500F8219D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		93CCABE71A4D80380061475B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93CCAC001A4D80380061475B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -141,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				93CCABEC1A4D80380061475B /* WKWebViewDemo */,
-				93CCAC061A4D80380061475B /* WKWebViewDemoTests */,
 				93CCABEB1A4D80380061475B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,9 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				93CCABEA1A4D80380061475B /* WKWebViewDemo.app */,
-				93CCAC031A4D80380061475B /* WKWebViewDemoTests.xctest */,
-				933537481BE7C7AA00F8219D /* TDataProvider.appex */,
-				9335375B1BE7C7E500F8219D /* FDataProvider.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,23 +118,6 @@
 			children = (
 				93CCABEE1A4D80380061475B /* Info.plist */,
 				93CCABEF1A4D80380061475B /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		93CCAC061A4D80380061475B /* WKWebViewDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				93CCAC091A4D80380061475B /* WKWebViewDemoTests.m */,
-				93CCAC071A4D80380061475B /* Supporting Files */,
-			);
-			path = WKWebViewDemoTests;
-			sourceTree = "<group>";
-		};
-		93CCAC071A4D80380061475B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				93CCAC081A4D80380061475B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,40 +157,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		933537471BE7C7AA00F8219D /* TDataProvider */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 933537551BE7C7AA00F8219D /* Build configuration list for PBXNativeTarget "TDataProvider" */;
-			buildPhases = (
-				933537441BE7C7AA00F8219D /* Sources */,
-				933537451BE7C7AA00F8219D /* Frameworks */,
-				933537461BE7C7AA00F8219D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TDataProvider;
-			productName = TDataProvider;
-			productReference = 933537481BE7C7AA00F8219D /* TDataProvider.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		9335375A1BE7C7E500F8219D /* FDataProvider */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 933537661BE7C7E500F8219D /* Build configuration list for PBXNativeTarget "FDataProvider" */;
-			buildPhases = (
-				933537571BE7C7E500F8219D /* Sources */,
-				933537581BE7C7E500F8219D /* Frameworks */,
-				933537591BE7C7E500F8219D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FDataProvider;
-			productName = FDataProvider;
-			productReference = 9335375B1BE7C7E500F8219D /* FDataProvider.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		93CCABE91A4D80380061475B /* WKWebViewDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93CCAC0D1A4D80380061475B /* Build configuration list for PBXNativeTarget "WKWebViewDemo" */;
@@ -279,31 +169,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				933537511BE7C7AA00F8219D /* PBXTargetDependency */,
-				933537641BE7C7E500F8219D /* PBXTargetDependency */,
 			);
 			name = WKWebViewDemo;
 			productName = WKWebViewDemo;
 			productReference = 93CCABEA1A4D80380061475B /* WKWebViewDemo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		93CCAC021A4D80380061475B /* WKWebViewDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 93CCAC101A4D80380061475B /* Build configuration list for PBXNativeTarget "WKWebViewDemoTests" */;
-			buildPhases = (
-				93CCABFF1A4D80380061475B /* Sources */,
-				93CCAC001A4D80380061475B /* Frameworks */,
-				93CCAC011A4D80380061475B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				93CCAC051A4D80380061475B /* PBXTargetDependency */,
-			);
-			name = WKWebViewDemoTests;
-			productName = WKWebViewDemoTests;
-			productReference = 93CCAC031A4D80380061475B /* WKWebViewDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -311,21 +181,11 @@
 		93CCABE21A4D80380061475B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = wangqianzhou;
 				TargetAttributes = {
-					933537471BE7C7AA00F8219D = {
-						CreatedOnToolsVersion = 7.1;
-					};
-					9335375A1BE7C7E500F8219D = {
-						CreatedOnToolsVersion = 7.1;
-					};
 					93CCABE91A4D80380061475B = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					93CCAC021A4D80380061475B = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 93CCABE91A4D80380061475B;
 					};
 				};
 			};
@@ -343,28 +203,11 @@
 			projectRoot = "";
 			targets = (
 				93CCABE91A4D80380061475B /* WKWebViewDemo */,
-				93CCAC021A4D80380061475B /* WKWebViewDemoTests */,
-				933537471BE7C7AA00F8219D /* TDataProvider */,
-				9335375A1BE7C7E500F8219D /* FDataProvider */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		933537461BE7C7AA00F8219D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		933537591BE7C7E500F8219D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		93CCABE81A4D80380061475B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,30 +230,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93CCAC011A4D80380061475B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		933537441BE7C7AA00F8219D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		933537571BE7C7E500F8219D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		93CCABE61A4D80380061475B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,99 +245,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93CCABFF1A4D80380061475B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93CCAC0A1A4D80380061475B /* WKWebViewDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		933537511BE7C7AA00F8219D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 933537471BE7C7AA00F8219D /* TDataProvider */;
-			targetProxy = 933537501BE7C7AA00F8219D /* PBXContainerItemProxy */;
-		};
-		933537641BE7C7E500F8219D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9335375A1BE7C7E500F8219D /* FDataProvider */;
-			targetProxy = 933537631BE7C7E500F8219D /* PBXContainerItemProxy */;
-		};
-		93CCAC051A4D80380061475B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 93CCABE91A4D80380061475B /* WKWebViewDemo */;
-			targetProxy = 93CCAC041A4D80380061475B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		933537531BE7C7AA00F8219D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TDataProvider/TDataProvider.entitlements;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = TDataProvider/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucweb.me.WKWebViewDemo.TDataProvider;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		933537541BE7C7AA00F8219D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TDataProvider/TDataProvider.entitlements;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = TDataProvider/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucweb.me.WKWebViewDemo.TDataProvider;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		933537671BE7C7E500F8219D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FDataProvider/FDataProvider.entitlements;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = FDataProvider/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucweb.me.WKWebViewDemo.FDataProvider;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		933537681BE7C7E500F8219D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FDataProvider/FDataProvider.entitlements;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = FDataProvider/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucweb.me.WKWebViewDemo.FDataProvider;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		93CCAC0B1A4D80380061475B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -536,6 +268,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -550,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -585,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -599,6 +332,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ucweb.me.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -610,65 +344,14 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ucweb.me.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		93CCAC111A4D80380061475B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WKWebViewDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WKWebViewDemo.app/WKWebViewDemo";
-			};
-			name = Debug;
-		};
-		93CCAC121A4D80380061475B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WKWebViewDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WKWebViewDemo.app/WKWebViewDemo";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		933537551BE7C7AA00F8219D /* Build configuration list for PBXNativeTarget "TDataProvider" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				933537531BE7C7AA00F8219D /* Debug */,
-				933537541BE7C7AA00F8219D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		933537661BE7C7E500F8219D /* Build configuration list for PBXNativeTarget "FDataProvider" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				933537671BE7C7E500F8219D /* Debug */,
-				933537681BE7C7E500F8219D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		93CCABE51A4D80380061475B /* Build configuration list for PBXProject "WKWebViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -683,15 +366,6 @@
 			buildConfigurations = (
 				93CCAC0E1A4D80380061475B /* Debug */,
 				93CCAC0F1A4D80380061475B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		93CCAC101A4D80380061475B /* Build configuration list for PBXNativeTarget "WKWebViewDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				93CCAC111A4D80380061475B /* Debug */,
-				93CCAC121A4D80380061475B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
