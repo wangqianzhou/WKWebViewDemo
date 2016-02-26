@@ -35,7 +35,7 @@
 
 - (void)loadView
 {
-    CGRect rect = [[UIScreen mainScreen] applicationFrame];
+    CGRect rect = [[UIScreen mainScreen] bounds];
     UIView* mainView = [[[UIView alloc] initWithFrame:rect] autorelease];
     mainView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.view = mainView;
@@ -348,7 +348,7 @@
  @discussion Clients should visually indicate that this panel comes from JavaScript initiated by the specified frame.
  The panel should have a single "OK" button.
  */
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)())completionHandler
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler;
 {
     
 }
@@ -393,8 +393,7 @@
 
 #pragma mark- KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    
+{    
     if ([keyPath isEqualToString:@"loading"])
     {
         BOOL bNewState = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
