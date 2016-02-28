@@ -208,7 +208,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 
 
 - (void)_setMenu {
-	int count = [_menusArray count];
+	NSInteger count = [_menusArray count];
     for (int i = 0; i < count; i ++)
     {
         QuadCurveMenuItem *item = [_menusArray objectAtIndex:i];
@@ -268,7 +268,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
         return;
     }
     
-    int tag = 1000 + _flag;
+    NSInteger tag = 1000 + _flag;
     QuadCurveMenuItem *item = (QuadCurveMenuItem *)[self viewWithTag:tag];
     
     CAKeyframeAnimation *rotateAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
@@ -310,7 +310,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
         return;
     }
     
-    int tag = 1000 + _flag;
+    NSInteger tag = 1000 + _flag;
      QuadCurveMenuItem *item = (QuadCurveMenuItem *)[self viewWithTag:tag];
     
     CAKeyframeAnimation *rotateAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];

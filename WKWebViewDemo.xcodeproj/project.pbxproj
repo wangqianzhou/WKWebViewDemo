@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9347A5731C80A4B500ED604C /* WKWebViewDemo.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 9347A5721C80A4B500ED604C /* WKWebViewDemo.entitlements */; };
 		93CCABF01A4D80380061475B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABEF1A4D80380061475B /* main.m */; };
 		93CCABF31A4D80380061475B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABF21A4D80380061475B /* AppDelegate.m */; };
 		93CCABF61A4D80380061475B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABF51A4D80380061475B /* ViewController.m */; };
@@ -43,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9347A5721C80A4B500ED604C /* WKWebViewDemo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WKWebViewDemo.entitlements; sourceTree = "<group>"; };
 		93CCABEA1A4D80380061475B /* WKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CCABEE1A4D80380061475B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93CCABEF1A4D80380061475B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		93CCABED1A4D80380061475B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9347A5721C80A4B500ED604C /* WKWebViewDemo.entitlements */,
 				93CCABEE1A4D80380061475B /* Info.plist */,
 				93CCABEF1A4D80380061475B /* main.m */,
 			);
@@ -186,6 +189,7 @@
 				TargetAttributes = {
 					93CCABE91A4D80380061475B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = X3X7VZZ2J6;
 					};
 				};
 			};
@@ -216,6 +220,7 @@
 				93CCAC341A4D83E20061475B /* icon-plus@2x.png in Resources */,
 				93CCAC2D1A4D83E20061475B /* bg-menuitem-highlighted.png in Resources */,
 				93CCAC291A4D83E20061475B /* bg-addbutton-highlighted.png in Resources */,
+				9347A5731C80A4B500ED604C /* WKWebViewDemo.entitlements in Resources */,
 				93CCAC321A4D83E20061475B /* icon-plus-highlighted@2x.png in Resources */,
 				93CCAC2A1A4D83E20061475B /* bg-addbutton-highlighted@2x.png in Resources */,
 				93CCAC2F1A4D83E20061475B /* bg-menuitem.png in Resources */,
@@ -330,10 +335,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ucweb.me.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b0de86e0-a4af-4a4a-99e4-bd6f9e8ebad1";
 			};
 			name = Debug;
 		};
@@ -342,10 +349,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ucweb.me.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b0de86e0-a4af-4a4a-99e4-bd6f9e8ebad1";
 			};
 			name = Release;
 		};

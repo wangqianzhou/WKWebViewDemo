@@ -15,7 +15,7 @@
 @interface QuadCurveMenu : UIView <QuadCurveMenuItemDelegate>
 {
     NSArray *_menusArray;
-    int _flag;
+    NSInteger _flag;
     NSTimer *_timer;
     QuadCurveMenuItem *_addButton;
     

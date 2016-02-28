@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <WebKit/WebKit.h>
 #import <objc/message.h>
+#import <NetworkExtension/NetworkExtension.h>
 
 @interface ViewController ()<QuadCurveMenuDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
 @property(nonatomic, retain)WKWebView* wkview;
@@ -393,7 +394,7 @@
 
 #pragma mark- KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{    
+{
     if ([keyPath isEqualToString:@"loading"])
     {
         BOOL bNewState = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
