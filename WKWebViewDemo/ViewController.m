@@ -6,22 +6,27 @@
 //  Copyright (c) 2013年 uc. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "QuadCurveMenu.h"
 #import <QuartzCore/QuartzCore.h>
 #import <WebKit/WebKit.h>
 #import <objc/message.h>
 #import <NetworkExtension/NetworkExtension.h>
+#import "ViewController.h"
+#import "CustomButton.h"
+#import "UIView+Addtions.h"
+#import "URLViewController.h"
 
-@interface ViewController ()<QuadCurveMenuDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
+@interface ViewController ()<WKNavigationDelegate,
+                            WKUIDelegate,
+                            WKScriptMessageHandler,
+                            UIViewControllerPreviewingDelegate,
+                            URLViewControllerDelegate>
+
 @property(nonatomic, retain)WKWebView* wkview;
-@property(nonatomic, retain)WKWebView* wkview_1;
 @property(nonatomic, retain)WKWebViewConfiguration* wkCfg;
 @end
 
 @implementation ViewController
 @synthesize wkview = _wkview;
-@synthesize wkview_1 = _wkview_1;
 @synthesize wkCfg = _wkCfg;
 
 - (id)init
@@ -34,6 +39,14 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [_wkview release], _wkview = nil;
+    [_wkCfg release], _wkCfg = nil;
+    
+    [super dealloc];
+}
+
 - (void)loadView
 {
     CGRect rect = [[UIScreen mainScreen] bounds];
@@ -44,7 +57,7 @@
     WKWebViewConfiguration* cfg = [[[WKWebViewConfiguration alloc] init] autorelease];
     self.wkCfg = cfg;
     
-    WKPreferences* wkPrefer = [self preferences];
+    WKPreferences* wkPrefer = [[[WKPreferences alloc] init] autorelease];
     _wkCfg.preferences = wkPrefer;
     
     WKUserContentController* ucc = [[[WKUserContentController alloc] init] autorelease];
@@ -71,91 +84,10 @@
 //    [webView addObserver:self forKeyPath:@"URL" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 
     
-    [self setButtonsWithFrame:rect];
+    [self initAllButtons];
 }
 
-- (WKPreferences*)preferences
-{
-    WKPreferences* wkPrefer = [[[WKPreferences alloc] init] autorelease];
-    
-    return wkPrefer;
-}
-
-- (void)setButtonsWithFrame:(CGRect)rect
-{
-    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
-    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
-    
-    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
-    
-    QuadCurveMenuItem *starMenuItem1 = [[QuadCurveMenuItem alloc] initWithImage:storyMenuItemImage
-                                                               highlightedImage:storyMenuItemImagePressed
-                                                                   ContentImage:starImage
-                                                        highlightedContentImage:nil];
-    QuadCurveMenuItem *starMenuItem2 = [[QuadCurveMenuItem alloc] initWithImage:storyMenuItemImage
-                                                               highlightedImage:storyMenuItemImagePressed
-                                                                   ContentImage:starImage
-                                                        highlightedContentImage:nil];
-    QuadCurveMenuItem *starMenuItem3 = [[QuadCurveMenuItem alloc] initWithImage:storyMenuItemImage
-                                                               highlightedImage:storyMenuItemImagePressed
-                                                                   ContentImage:starImage
-                                                        highlightedContentImage:nil];
-    QuadCurveMenuItem *starMenuItem4 = [[QuadCurveMenuItem alloc] initWithImage:storyMenuItemImage
-                                                               highlightedImage:storyMenuItemImagePressed
-                                                                   ContentImage:starImage
-                                                        highlightedContentImage:nil];
-    QuadCurveMenuItem *starMenuItem5 = [[QuadCurveMenuItem alloc] initWithImage:storyMenuItemImage
-                                                               highlightedImage:storyMenuItemImagePressed
-                                                                   ContentImage:starImage
-                                                        highlightedContentImage:nil];
-    QuadCurveMenuItem *starMenuItem6 = [[QuadCurveMenuItem alloc] initWithImage:storyMenuItemImage
-                                                               highlightedImage:storyMenuItemImagePressed
-                                                                   ContentImage:starImage
-                                                        highlightedContentImage:nil];
-    QuadCurveMenuItem *starMenuItem7 = [[QuadCurveMenuItem alloc] initWithImage:storyMenuItemImage
-                                                               highlightedImage:storyMenuItemImagePressed
-                                                                   ContentImage:starImage
-                                                        highlightedContentImage:nil];
-    QuadCurveMenuItem *starMenuItem8 = [[QuadCurveMenuItem alloc] initWithImage:storyMenuItemImage
-                                                               highlightedImage:storyMenuItemImagePressed
-                                                                   ContentImage:starImage
-                                                        highlightedContentImage:nil];
-    
-    NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, starMenuItem6, starMenuItem7,starMenuItem8, nil];
-    [starMenuItem1 release];
-    [starMenuItem2 release];
-    [starMenuItem3 release];
-    [starMenuItem4 release];
-    [starMenuItem5 release];
-    [starMenuItem6 release];
-    [starMenuItem7 release];
-    [starMenuItem8 release];
-    
-    QuadCurveMenu *menu = [[QuadCurveMenu alloc] initWithFrame:rect menus:menus];
-	
-	// customize menu
-	/*
-     menu.rotateAngle = M_PI/3;
-     menu.menuWholeAngle = M_PI;
-     menu.timeOffset = 0.2f;
-     menu.farRadius = 180.0f;
-     menu.endRadius = 100.0f;
-     menu.nearRadius = 50.0f;
-     */
-	
-    menu.delegate = self;
-    [self.view addSubview:menu];
-    [menu release];
-}
-
-- (void)dealloc
-{
-    [_wkview release], _wkview = nil;
-    [_wkCfg release], _wkCfg = nil;
-    
-    [super dealloc];
-}
-
+#pragma mark- ViewController
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -181,19 +113,64 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
-
-#pragma mark- QuadCurveMenuDelegate
-- (void)quadCurveMenu:(QuadCurveMenu *)menu didSelectIndex:(NSInteger)idx
+- (void)viewWillAppear:(BOOL)animated
 {
+    [self registerForPreviewingWithDelegate:self sourceView:self.view];
+}
+#pragma mark- ButtonActions
+- (void)initAllButtons
+{
+    //打开
+    CustomButton* btn = [self buttonWithTitle:@"O"];
+    btn.tag = 0;
+    btn.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
+    [self.view addSubview:btn];
+    
+    btn = [self buttonWithTitle:@"R"];
+    btn.tag = 1;
+    btn.right = self.view.right;
+    btn.backgroundColor = [[UIColor cyanColor] colorWithAlphaComponent:0.5];
+    [self.view addSubview:btn];
+    
+    btn = [self buttonWithTitle:@"<"];
+    btn.tag = 2;
+    btn.centerY = self.view.centerY;
+    btn.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
+    [self.view addSubview:btn];
+    
+    btn = [self buttonWithTitle:@">"];
+    btn.tag = 3;
+    btn.right = self.view.right;
+    btn.centerY = self.view.centerY;
+    btn.backgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.5];
+    [self.view addSubview:btn];
+}
+
+- (CustomButton*)buttonWithTitle:(NSString*)title
+{
+    CustomButton* btn = [[CustomButton alloc] initWithFrame:CGRectMake(0, 0, DefaultBtnWidth, DefaultBtnHeight)];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateHighlighted];
+    [btn addTarget:self action:@selector(onBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return btn;
+}
+
+- (void)onBtnClick:(id)sender
+{
+    NSInteger idx = [(UIButton*)sender tag];
     NSString* selName = [NSString stringWithFormat:@"onBtn_%ld", (long)idx];
     SEL sel = NSSelectorFromString(selName);
     
-    ((void(*)(id, SEL))objc_msgSend)(self, sel);
+    ((void(*)(id,SEL))objc_msgSend)(self, sel);
 }
 
 - (void)onBtn_0
 {
-    [self openlink];
+    URLViewController* ctl = [[URLViewController alloc] init];
+    ctl.delegate = self;
+    
+    [self.navigationController pushViewController:ctl animated:YES];
 }
 
 - (void)onBtn_1
@@ -231,7 +208,6 @@
     
 }
 
-#pragma mark- ButtonActions
 - (void)openlink
 {
     NSString* link =
@@ -245,7 +221,7 @@
 {
     NSURL* url = [NSURL URLWithString:link];
     NSMutableURLRequest* mRequest = [NSMutableURLRequest requestWithURL:url];
-
+    
     [_wkview loadRequest:mRequest];
 }
 
@@ -419,6 +395,26 @@
     _wkview.layer.borderWidth = 2;
     _wkview.layer.borderColor = [borderClr CGColor];
     
+}
+
+#pragma mark- URLViewControllerDelegate
+- (void)onURLSelect:(NSString*)url
+{
+    [self loadWithURLString:url];
+}
+
+#pragma mark- UIViewControllerPreviewingDelegate
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location NS_AVAILABLE_IOS(9_0)
+{
+    URLViewController* ctl = [[URLViewController alloc] init];
+    ctl.delegate = self;
+    
+    return ctl;
+}
+
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit NS_AVAILABLE_IOS(9_0)
+{
+    [self.navigationController pushViewController:viewControllerToCommit animated:NO];
 }
 
 @end
