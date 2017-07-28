@@ -35,9 +35,10 @@
 
 -(void)dealloc
 {
-    _mReuqest = nil;
-    _connection = nil;
+    [_mReuqest release], _mReuqest = nil;
+    [_connection release], _connection = nil;
     
+    [super dealloc];
 }
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request

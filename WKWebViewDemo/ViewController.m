@@ -208,15 +208,6 @@
     
 }
 
-- (void)openlink
-{
-    NSString* link =
-    @"http://m.hao123.com";
-    
-    
-    [self loadWithURLString:link];
-}
-
 - (void)loadWithURLString:(NSString*)link
 {
     NSURL* url = [NSURL URLWithString:link];

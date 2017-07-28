@@ -13,6 +13,7 @@
 		93B75A201F299937005AB59A /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B75A191F299937005AB59A /* UIView+Addtions.m */; };
 		93B75A211F299937005AB59A /* URLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B75A1B1F299937005AB59A /* URLModel.m */; };
 		93B75A221F299937005AB59A /* URLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B75A1D1F299937005AB59A /* URLViewController.m */; };
+		93BD05F51F2ADD96009BC5DD /* CustomPreferences.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93BD05F41F2ADD96009BC5DD /* CustomPreferences.mm */; };
 		93CCABF01A4D80380061475B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABEF1A4D80380061475B /* main.m */; };
 		93CCABF31A4D80380061475B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABF21A4D80380061475B /* AppDelegate.m */; };
 		93CCABF61A4D80380061475B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CCABF51A4D80380061475B /* ViewController.m */; };
@@ -44,6 +45,8 @@
 		93B75A1B1F299937005AB59A /* URLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLModel.m; sourceTree = "<group>"; };
 		93B75A1C1F299937005AB59A /* URLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLViewController.h; sourceTree = "<group>"; };
 		93B75A1D1F299937005AB59A /* URLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLViewController.m; sourceTree = "<group>"; };
+		93BD05F31F2ADD96009BC5DD /* CustomPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferences.h; sourceTree = "<group>"; };
+		93BD05F41F2ADD96009BC5DD /* CustomPreferences.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomPreferences.mm; sourceTree = "<group>"; };
 		93CCABEA1A4D80380061475B /* WKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93CCABEE1A4D80380061475B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93CCABEF1A4D80380061475B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +87,10 @@
 		93CCABEC1A4D80380061475B /* WKWebViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				93CCABF11A4D80380061475B /* AppDelegate.h */,
+				93CCABF21A4D80380061475B /* AppDelegate.m */,
+				93CCABF41A4D80380061475B /* ViewController.h */,
+				93CCABF51A4D80380061475B /* ViewController.m */,
 				93B75A141F299937005AB59A /* CustomButton.h */,
 				93B75A151F299937005AB59A /* CustomButton.m */,
 				93B75A161F299937005AB59A /* CustomURLProtocol.h */,
@@ -94,10 +101,8 @@
 				93B75A1B1F299937005AB59A /* URLModel.m */,
 				93B75A1C1F299937005AB59A /* URLViewController.h */,
 				93B75A1D1F299937005AB59A /* URLViewController.m */,
-				93CCABF11A4D80380061475B /* AppDelegate.h */,
-				93CCABF21A4D80380061475B /* AppDelegate.m */,
-				93CCABF41A4D80380061475B /* ViewController.h */,
-				93CCABF51A4D80380061475B /* ViewController.m */,
+				93BD05F31F2ADD96009BC5DD /* CustomPreferences.h */,
+				93BD05F41F2ADD96009BC5DD /* CustomPreferences.mm */,
 				93CCABFA1A4D80380061475B /* Images.xcassets */,
 				93CCABED1A4D80380061475B /* Supporting Files */,
 			);
@@ -192,6 +197,7 @@
 				93B75A201F299937005AB59A /* UIView+Addtions.m in Sources */,
 				93CCABF61A4D80380061475B /* ViewController.m in Sources */,
 				93CCABF31A4D80380061475B /* AppDelegate.m in Sources */,
+				93BD05F51F2ADD96009BC5DD /* CustomPreferences.mm in Sources */,
 				93CCABF01A4D80380061475B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

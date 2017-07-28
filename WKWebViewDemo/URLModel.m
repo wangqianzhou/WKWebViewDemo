@@ -12,7 +12,8 @@ static NSString* URLList[] =
 {
     @"http://hao123.com",
     @"http://m.baidu.com",
-    @"http://html5test.com/"
+    @"http://html5test.com/",
+    @"https://wangqianzhou.github.io/browser-detect/"
 };
 
 @interface URLModel ( )

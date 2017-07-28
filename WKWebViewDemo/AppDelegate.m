@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-
+#import "CustomPreferences.h"
 
 @implementation AppDelegate
 
@@ -24,12 +24,16 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    
+    [CustomPreferences initPreferences];
+    
     self.viewController = [[[ViewController alloc] init] autorelease];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     navController.navigationBar.hidden = YES;
     
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
+
     
     return YES;
 }
