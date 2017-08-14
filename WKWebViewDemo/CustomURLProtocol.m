@@ -106,4 +106,18 @@
     [[self client] URLProtocolDidFinishLoading:self];
 }
 
+- (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
+    {
+        NSLog(@"Ignoring SSL");
+        SecTrustRef trust = challenge.protectionSpace.serverTrust;
+        NSURLCredential *cred;
+        cred = [NSURLCredential credentialForTrust:trust];
+        [challenge.sender useCredential:cred forAuthenticationChallenge:challenge];
+        return;
+    }
+    
+    // Provide your regular login credential if needed...
+}
 @end
