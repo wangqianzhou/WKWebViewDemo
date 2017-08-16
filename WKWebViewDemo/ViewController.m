@@ -15,13 +15,17 @@
 #import "UIView+Addtions.h"
 #import "URLViewController.h"
 
+const CGFloat TOP_BAR_HEIGHT = 60.0;
+
 @interface ViewController ()<WKNavigationDelegate,
                             WKUIDelegate,
                             WKScriptMessageHandler,
                             UIViewControllerPreviewingDelegate,
-                            URLViewControllerDelegate>
+                            URLViewControllerDelegate,
+                            UIScrollViewDelegate>
 
 @property(nonatomic, retain)WKWebView* wkview;
+@property(nonatomic, retain)UIView* topbar;
 @property(nonatomic, retain)WKWebViewConfiguration* wkCfg;
 @end
 
@@ -41,6 +45,7 @@
 
 - (void)dealloc
 {
+    [_topbar release], _topbar = nil;
     [_wkview release], _wkview = nil;
     [_wkCfg release], _wkCfg = nil;
     
@@ -54,6 +59,18 @@
     mainView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.view = mainView;
     
+    [self initWebViewOnView:mainView withBounds:rect];
+    
+    self.topbar = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, TOP_BAR_HEIGHT)] autorelease];
+    _topbar.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0.5];
+    [self.view addSubview:_topbar];
+    
+    
+    [self initAllButtons];
+}
+
+- (void)initWebViewOnView:(UIView*)mainView withBounds:(CGRect)rect
+{
     WKWebViewConfiguration* cfg = [[[WKWebViewConfiguration alloc] init] autorelease];
     self.wkCfg = cfg;
     
@@ -77,14 +94,45 @@
     [mainView addSubview:webView];
     self.wkview = webView;
     
-//    [webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    //    [webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     [webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-//    [webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-//    [webView addObserver:self forKeyPath:@"hasOnlySecureContent" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-//    [webView addObserver:self forKeyPath:@"URL" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-
+    [webView.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    //    [webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    //    [webView addObserver:self forKeyPath:@"hasOnlySecureContent" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    //    [webView addObserver:self forKeyPath:@"URL" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     
-    [self initAllButtons];
+    [webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    
+    
+    self.wkview.scrollView.contentInset = UIEdgeInsetsMake(TOP_BAR_HEIGHT, 0, 0, 0);
+    self.wkview.scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(TOP_BAR_HEIGHT, 0, 0, 0);
+    
+    self.wkview.scrollView.delegate = self;
+    
+    UIView* contentView = [self contentViewFromWKWebView:self.wkview];
+    
+    CGRect contentFrame = contentView.frame;
+    contentFrame.origin.y = TOP_BAR_HEIGHT;
+    contentView.frame = contentFrame;
+    
+    
+    self.wkview.scrollView.contentInset = UIEdgeInsetsMake(0, 0, TOP_BAR_HEIGHT, 0);
+}
+
+- (UIView*)contentViewFromWKWebView:(WKWebView*)webview
+{
+    UIView* view = nil;
+    NSArray* subviews = [webview.scrollView subviews];
+    for (UIView* subview in subviews)
+    {
+        if ([NSStringFromClass([subview class]) isEqualToString:@"WKContentView"])
+        {
+            view = subview;
+            break;
+        }
+    }
+    
+    return view;
 }
 
 #pragma mark- ViewController
@@ -175,7 +223,7 @@
 
 - (void)onBtn_1
 {
-    
+
 }
 
 - (void)onBtn_2
@@ -224,8 +272,16 @@
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
-    
-    decisionHandler( WKNavigationActionPolicyAllow );
+    if ([navigationAction.request.URL.scheme isEqualToString:@"uclink"])
+    {
+        [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
+        
+        decisionHandler(WKNavigationActionPolicyCancel);
+    }
+    else
+    {
+        decisionHandler( WKNavigationActionPolicyAllow );
+    }
 }
 
 /*! @abstract Decides whether a navigation should be allowed or cancelled once its response is known.
@@ -406,6 +462,72 @@
 - (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit NS_AVAILABLE_IOS(9_0)
 {
     [self.navigationController pushViewController:viewControllerToCommit animated:NO];
+}
+
+#pragma mark- UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    
+}
+
+- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return nil;
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view
+{
+    
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale
+{
+    
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
+{
+    
 }
 
 @end

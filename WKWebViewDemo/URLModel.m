@@ -13,7 +13,14 @@ static NSString* URLList[] =
     @"http://hao123.com",
     @"http://m.baidu.com",
     @"http://html5test.com/",
-    @"https://wangqianzhou.github.io/browser-detect/"
+    @"https://wangqianzhou.github.io/browser-detect/",
+    @"http://a.mp.uc.cn/article.html?uc_param_str=frdnsnpfvecpntnwprdssskt&zzd_from=uc-iflow&dl_type=2&app=uc-iflow&fr=iphone&dn=13311942399-7511a41f&pf=44&ve=11.6.0.987&pc=AAQeLLz8ntugZTA7xfa663T3jL%2BzsSxc4E7%2FyEQIo1uR0sqA1yPRjBVCpDJ5YP%2FP645FHlTlpFzL7YBqvYRKAaXq&nt=99&nw=WIFI&pr=UCBrowser&ut=AATb3pCsc8uFbzRUTixV3DlWpKjauC1JU6FUK2QiFp1ybw%3D%3D&ss=0x0#!wm_aid=1d070816db474340a86b292f9edc49aa!!wm_id=c725696c680a4a8485bd9e7083531adb",
+    @"https://ultradoux.ews.m.jaeapp.com/video_test.html",
+    @"https://krpano.com/ios/bugs/ios8-webgl-video-cors/",
+    @"https://wangqianzhou.github.io/video-crossdomain/video_cross_domain.html",
+    @"https://wangqianzhou.github.io/video-crossdomain/video_test.html",
+    @"https://wangqianzhou.github.io/video-crossdomain/video_test_local.html",
+    @"https://market.wapa.taobao.com/abs-web/apps/63_brand_brand_1500950230894-1331340515.html"
 };
 
 @interface URLModel ( )
