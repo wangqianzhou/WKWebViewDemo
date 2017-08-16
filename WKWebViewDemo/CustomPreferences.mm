@@ -21,6 +21,7 @@
 {
     [self registerScheme:@"http"];
     [self registerScheme:@"https"];
+    [self registerScheme:@"uclink"];
     [NSURLProtocol registerClass:[CustomURLProtocol class]];
 }
 
