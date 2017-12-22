@@ -507,7 +507,7 @@ const CGFloat TOP_BAR_HEIGHT = 60.0;
 
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return nil;
+    return self.view;
 }
 
 - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view
