@@ -109,6 +109,10 @@ const CGFloat TOP_BAR_HEIGHT = 60.0;
     
     self.wkview.scrollView.delegate = self;
     
+    NSString* ua =
+    @"Mozilla/5.0 (iPhone Simulator; CPU iPhone OS 8_1 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/12B411 UCBrowser/10.2.5.533 Mobile";
+
+    _wkview.customUserAgent = ua;
     UIView* contentView = [self contentViewFromWKWebView:self.wkview];
     
     CGRect contentFrame = contentView.frame;
@@ -171,11 +175,13 @@ const CGFloat TOP_BAR_HEIGHT = 60.0;
     //打开
     CustomButton* btn = [self buttonWithTitle:@"O"];
     btn.tag = 0;
+    btn.top = 30;
     btn.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
     [self.view addSubview:btn];
     
     btn = [self buttonWithTitle:@"R"];
     btn.tag = 1;
+    btn.top = 30;
     btn.right = self.view.right;
     btn.backgroundColor = [[UIColor cyanColor] colorWithAlphaComponent:0.5];
     [self.view addSubview:btn];
